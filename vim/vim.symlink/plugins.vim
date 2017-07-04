@@ -14,6 +14,7 @@ Plugin 'vim-scripts/vim-auto-save'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
 " Fuzzy search
 Plugin 'kien/ctrlp.vim'
 " Snippets

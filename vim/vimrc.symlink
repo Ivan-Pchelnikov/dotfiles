@@ -207,3 +207,23 @@ let g:UltiSnipsJumpForwardTrigger = '<C-j>'
 let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
 setlocal indentkeys+=0
 set foldmethod=syntax
+
+" Autoreload external changes
+" check one time after 4s of inactivity in normal mode
+set autoread
+au CursorHold * checktime
+" Visual Studioesque - Track Active Item in Solution Explorer
+function BufNerdHighlight()
+   " When NERDTree and more than 1 buffer is open
+   if (bufnr("$") > 1 && !(winnr() == 1 && exists("t:NERDTreeBufName")))
+      " if not an empty buffer
+      if !(getline(1) ==# '' && 1 == line('$'))
+         :NERDTreeFind
+      else
+         :NERDTreeCWD
+      endif
+      ":NERDTreeToggle
+   endif
+endfunction
+
+autocmd BufWinEnter * call BufNerdHighlight()
