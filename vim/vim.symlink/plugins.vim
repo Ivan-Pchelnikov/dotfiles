@@ -6,8 +6,6 @@ call vundle#begin()
 " let vundle manage vundle
 Plugin 'gmarik/vundle'
 " Colour schemes
-Plugin 'chriskempson/base16-iterm2'
-Plugin 'chriskempson/base16-vim'
 Plugin 'altercation/vim-colors-solarized'
 " Utilities
 Plugin 'vim-scripts/vim-auto-save'
@@ -33,13 +31,11 @@ Plugin 'tpope/vim-markdown'
 " Javascript -  some from referenced from Joyent
 Plugin 'moll/vim-node'
 Plugin 'godlygeek/tabular'
-" Plugin 'jelera/vim-javascript-syntax'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
 Plugin 'burnettk/vim-angular'
-"Plugin 'othree/javascript-libraries-syntax.vim'
 " Zen Coding
 Plugin 'mattn/emmet-vim'
 " Code Commenting
@@ -49,8 +45,6 @@ Plugin 'editorconfig/editorconfig-vim'
 " Search and replace
 Plugin 'henrik/vim-qargs'
 " JavaScript Beautify
-"Plugin 'maksimr/vim-jsbeautify'
-"Plugin 'einars/js-beautify'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'Shougo/unite.vim'
