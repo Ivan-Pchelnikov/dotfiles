@@ -44,7 +44,7 @@ if has('mouse')
     set ttymouse=xterm2
 endif
 
-set clipboard=unnamed
+set clipboard^=unnamed
 
 " faster redrawing
 set ttyfast
@@ -56,6 +56,7 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 syntax on
 set ruler
 set number
+set statusline+=col:\ %c
 let g:jsx_ext_required = 0
 
 " Beautify
@@ -134,15 +135,18 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_html_tidy_exec = 'tidy5'
 let g:syntastic_html_tidy_ignore_errors=["<ion-", "discarding unexpected </ion-", " proprietary attribute \"ng-", "<md-", "discarding unexpected </md-", " proprietary attribute \"md-", "ui-view", "discarding unexpected </ui-view", "<fp-", "discarding unexpected </fp-"]
-let g:tsuquyomi_disable_quickfix = 1
 let g:syntastic_typescript_checkers = ['tsuquyomi'] " You shouldn't use 'tsc' checker.
+let g:tsuquyomi_disable_quickfix = 1
 let g:used_javascript_libs = 'underscore,angularjs,react'
+
+nnoremap <leader>r :TsuRenameSymbol<cr>
+"
 " CommonJS
 set suffixesadd+=.js
 " Git
@@ -200,15 +204,24 @@ function! ToggleVerbose()
 		set verbosefile=
 endif
 endfunction
+
 let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips"
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "~/.vim/ulti-snips/snippets"]
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "~/.vim/snippets", "~/.vim/bundle/vim-go/gosnippets/UltiSnips"]
 " UltiSnips triggering
 let g:UltiSnipsExpandTrigger = '<C-j>'
 let g:UltiSnipsJumpForwardTrigger = '<C-j>'
 let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
 setlocal indentkeys+=0
 set foldmethod=syntax
 
+noremap <Leader>y "+y
+noremap <Leader>Y "+Y
+noremap <Leader>p "+p
+noremap <Leader>P "+P
+
+"
 " Autoreload external changes
 " check one time after 4s of inactivity in normal mode
 set autoread

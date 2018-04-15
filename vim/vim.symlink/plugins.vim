@@ -42,6 +42,8 @@ Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-commentary'
 " Editor Config
 Plugin 'editorconfig/editorconfig-vim'
+" Go (golan)
+Plugin 'fatih/vim-go'
 " Search and replace
 Plugin 'henrik/vim-qargs'
 " JavaScript Beautify
@@ -57,6 +59,11 @@ Plugin 'reedes/vim-pencil'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'HerringtonDarkholme/yats.vim'
 Plugin 'vim-scripts/SyntaxComplete'
+" YML
+Plugin 'avakhov/vim-yaml'
+" Tmux
+Plugin 'tmux-plugins/vim-tmux'
+Plugin 'tmux-plugins/vim-tmux-focus-events'
 
 call vundle#end()
 

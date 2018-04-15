@@ -113,3 +113,17 @@ export function reducer(state = initialState, action: $1): State {
 }
 $0
 endsnippet
+
+snippet stencilcmp
+import { Component, Prop } from '@stencil/core'
+
+@Component({
+	tag: '$1',
+	styleUrl: '$1.scss',
+})
+export class ${1/(^|-)([a-z])/\u$2/g} {
+	$0
+	render() {
+	}
+}
+endsnippet
